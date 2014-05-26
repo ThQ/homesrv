@@ -9,4 +9,4 @@ RUN mkdir /config
 ADD core.conf /config/core.conf
 ADD auth /config/auth
 
-CMD /usr/bin/deluged -c /config -L info -d -l /config/log -L info
+CMD ["/usr/bin/deluged", "-c /config", "-L info", "-d", "-l /config/log", "-L info"]
