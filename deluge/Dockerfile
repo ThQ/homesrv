@@ -5,10 +5,9 @@ EXPOSE 58846 58846
 RUN apt-get update && apt-get install -y deluged
 
 RUN mkdir /deluged
-RUN mkdir /deluged/config
-RUN mkdir /deluged/config/deluged
+RUN mkdir /config
 
-ADD core.conf /deluged/config/deluged/core.conf
-ADD auth /deluged/config/deluged/auth
+ADD core.conf /config/core.conf
+ADD auth /config/auth
 
-CMD /usr/bin/deluged -c /deluged/config/deluged -L info -d -l /deluged/config/deluged/log -L info
+CMD /usr/bin/deluged -c /config -L info -d -l /config/log -L info
